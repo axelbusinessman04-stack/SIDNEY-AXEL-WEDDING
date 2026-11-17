@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SIDNEY &amp; AXEL — Notre invitation de mariage</title>
+<meta name="description" content="Sidney &amp; Axel vous invitent à célébrer leur mariage le 17 novembre 2026 à la Galerie Sainte-Cécile, Abidjan.">
+<meta name="theme-color" content="#B66A50">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SIDNEY &amp; AXEL — Notre invitation de mariage">
+<meta property="og:description" content="Vous êtes invités à notre mariage, le 25 novembre 2026 à Abidjan.">
+<meta property="og:image" content="images/image1.jpeg">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23B66A50'/%3E%3Ctext x='50' y='64' font-size='42' text-anchor='middle' fill='%23F5EFE6' font-family='serif'%3ES%26A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#F5EFE6;--terra:#B66A50;--brown:#493329;--cream2:#EDE3D5;--line:rgba(73,51,41,.22);
+--script:"Pinyon Script",cursive;--serif:"Bodoni Moda",Georgia,serif;--cap:"Cinzel",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--ease:cubic-bezier(.22,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--cream);color:var(--brown);font:300 1.05rem/1.7 var(--sans);overflow-x:hidden;-webkit-text-size-adjust:100%}
+body.locked{overflow:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.script{font-family:var(--script);font-weight:400}
+
+/* Enveloppe */
+.intro{position:fixed;inset:0;z-index:100;background:var(--cream2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:1rem;transition:opacity .9s var(--ease),visibility .9s}
+.intro.gone{opacity:0;visibility:hidden}
+.envelope{position:relative;width:min(86vw,380px);aspect-ratio:3/2;border:0;background:none;cursor:pointer;perspective:900px;margin-bottom:1.5rem}
+.envelope>span{position:absolute;display:block}
+.env-back{inset:0;background:#9d563e;border-radius:4px;box-shadow:0 18px 40px rgba(73,51,41,.28)}
+.card{left:7%;right:7%;top:6%;bottom:6%;background:var(--cream);display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;text-align:center;transition:transform 1s .55s var(--ease);z-index:2;border:1px solid var(--line);color:var(--brown)}
+.card small{font:500 .6rem var(--cap);letter-spacing:.2em}
+.card b{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.1}
+.env-front{inset:0;z-index:3;background:linear-gradient(to top right,transparent 49.6%,#b66a50 50%) left/50% 100% no-repeat,linear-gradient(to top left,transparent 49.6%,#b66a50 50%) right/50% 100% no-repeat;filter:brightness(.93);border-radius:4px}
+.flap{left:0;right:0;top:0;height:56%;z-index:4;background:var(--terra);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s var(--ease),z-index 0s .35s}
+.seal{left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;z-index:5;background:radial-gradient(circle at 35% 30%,#a63d36,#7a2420);display:grid!important;place-items:center;color:#f1d9c9;box-shadow:0 3px 8px rgba(0,0,0,.35);transition:opacity .4s .1s,transform .7s}
+.seal span{font-size:1.45rem;line-height:1}
+.intro-text{font:400 clamp(1.2rem,4.5vw,1.6rem) var(--serif);font-style:italic;text-align:center}
+.open-btn{padding:1rem 2rem;min-height:48px;border:0;background:var(--terra);color:var(--cream);font:500 .75rem var(--cap);letter-spacing:.22em;cursor:pointer;transition:background .3s,transform .3s,opacity .3s}.open-btn:hover{background:var(--brown);transform:translateY(-2px)}
+.skip{background:none;border:0;font:300 .78rem var(--sans);opacity:.6;text-decoration:underline;color:var(--brown);cursor:pointer;padding:.5rem}
+.intro.open .flap{transform:rotateX(180deg);z-index:1}
+.intro.open .seal{opacity:0;transform:translateY(-34px) scale(.8)}
+.intro.open .card{transform:translateY(-62%) scale(1.06)}
+.intro.open .intro-text,.intro.open .open-btn,.intro.open .skip{opacity:0;pointer-events:none;transition:opacity .3s}
+
+/* Navigation */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:.6rem 1.2rem;padding-top:calc(.6rem + env(safe-area-inset-top,0px));background:rgba(245,239,230,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);transform:translateY(-100%);transition:transform .6s var(--ease)}
+.nav.show{transform:none}
+.nav-logo{text-decoration:none;font-size:1.8rem;color:var(--terra);line-height:1}
+.menu{display:flex;gap:1.6rem}
+.menu a{font:500 .7rem var(--cap);letter-spacing:.16em;text-decoration:none;padding:.3rem 0;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.menu a:hover,.menu a.on{color:var(--terra);border-color:var(--terra)}
+.burger{display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:1.5px;background:var(--brown);transition:transform .3s}
+.burger span:first-child{top:18px}.burger span:last-child{top:25px}
+.burger[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.burger[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+
+/* Accueil */
+.hero{position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;color:var(--cream);overflow:hidden;isolation:isolate}
+.hero-img{position:absolute;inset:-6% 0;width:100%;height:112%;object-fit:cover;object-position:center 30%;z-index:-2;will-change:transform}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(48,32,25,.52)}
+.hero-in{padding:6rem 1.2rem 3rem;max-width:900px}
+.eyebrow{font:500 .75rem var(--cap);letter-spacing:.3em;margin-bottom:.5rem}
+.names{font-size:clamp(3.6rem,17vw,8.5rem);line-height:.95;display:flex;flex-direction:column;align-items:center}
+.names i{font:italic 400 clamp(1.4rem,5vw,2.4rem) var(--serif);margin:.1em 0}
+.tagline{font:italic 400 clamp(1.05rem,3.6vw,1.45rem) var(--serif);margin:1.4rem auto 1rem;max-width:30ch}
+.date{font:500 .85rem var(--cap);letter-spacing:.28em}
+.count{display:flex;justify-content:center;gap:clamp(.6rem,3vw,1.8rem);margin-top:2rem}
+.count div{min-width:64px;padding:.7rem .3rem;border:1px solid rgba(245,239,230,.5)}
+.count b{display:block;font:400 clamp(1.6rem,7vw,2.5rem)/1.1 var(--serif);font-variant-numeric:tabular-nums}
+.count span{font:500 .58rem var(--cap);letter-spacing:.18em}
+.done{font:italic 400 1.8rem var(--serif);margin-top:2rem}
+
+/* Sections */
+.sec{padding:clamp(4.5rem,11vw,8rem) 1.4rem;text-align:center}
+.sec.alt{background:var(--cream2)}
+h2{font:400 clamp(1.9rem,6vw,3.2rem)/1.15 var(--serif);max-width:20ch;margin:0 auto 1rem}
+.sub{max-width:52ch;margin:0 auto 2.5rem}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+.timeline{list-style:none;max-width:720px;margin:0 auto;position:relative;text-align:left}
+.timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--terra)}
+.timeline li{position:relative;padding:0 0 2.4rem 2.4rem}
+.timeline li::before{content:"";position:absolute;left:0;top:.45rem;width:15px;height:15px;border-radius:50%;background:var(--cream);border:1px solid var(--terra)}
+.timeline h3,.program h3{font:400 1.45rem var(--serif)}
+.timeline time,.program time{font:500 .72rem var(--cap);letter-spacing:.2em;color:var(--terra)}
+
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:.8rem;max-width:1000px;margin:2.5rem auto 0}
+.g{overflow:hidden;cursor:zoom-in;background:var(--cream)}
+.g img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.g1{grid-column:1/5;aspect-ratio:4/5}
+.g2{grid-column:5/7;aspect-ratio:3/4;align-self:end}
+.g3{grid-column:1/3;aspect-ratio:3/4}
+.g4{grid-column:3/7;aspect-ratio:5/4;align-self:start}
+@media(hover:hover){.g:hover img{transform:scale(1.04)}}
+
+.program{list-style:none;max-width:680px;margin:2.5rem auto 0;text-align:left}
+.program li{display:grid;grid-template-columns:88px 1fr;gap:1.2rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.program li:last-child{border-bottom:1px solid var(--line)}
+.program svg{width:20px;height:20px;stroke:var(--terra);fill:none;stroke-width:1.2;vertical-align:-3px;margin-right:.5rem}
+.program p{font-size:.98rem}
+
+.map{max-width:860px;margin:0 auto;border:1px solid var(--line);padding:.5rem;background:var(--cream)}
+.map iframe{display:block;width:100%;height:clamp(260px,50vw,400px);border:0;filter:sepia(.25) saturate(.9)}
+.addr{margin:1.2rem 0 1.6rem;font-size:.95rem}
+.btn{display:inline-block;padding:1rem 2rem;min-height:48px;background:var(--terra);color:var(--cream);font:500 .75rem var(--cap);letter-spacing:.2em;text-decoration:none;transition:background .3s,transform .3s}
+.btn:hover{background:var(--brown);transform:translateY(-2px)}
+.theme{font-size:clamp(2.4rem,9vw,3.6rem);color:var(--terra);line-height:1.2;margin-bottom:.8rem}
+.swatches{list-style:none;display:flex;justify-content:center;gap:clamp(1rem,5vw,2.6rem);flex-wrap:wrap}
+.swatches li{font:500 .68rem var(--cap);letter-spacing:.15em;display:grid;gap:.7rem;justify-items:center}
+.swatches i{width:68px;height:68px;border-radius:50%;border:1px solid var(--line)}
+
+.foot{position:relative;color:var(--cream);text-align:center;padding:6rem 1.4rem 3rem;overflow:hidden;isolation:isolate}
+.foot>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.foot::before{content:"";position:absolute;inset:0;background:rgba(48,32,25,.62);z-index:-1}
+.thanks{font:italic 400 clamp(1.2rem,4vw,1.7rem) var(--serif);margin-bottom:1rem}
+.big{font-size:clamp(2.8rem,10vw,4.6rem);line-height:1.1}
+.mono{font-size:1.6rem;margin:.6rem 0}
+.tags{font:500 .72rem var(--cap);letter-spacing:.14em;display:flex;gap:.4rem 1.2rem;justify-content:center;flex-wrap:wrap;margin-top:1rem}
+
+.lb{position:fixed;inset:0;z-index:200;background:rgba(30,20,15,.94);display:grid;place-items:center;padding:1rem}
+.lb[hidden]{display:none}
+.lb img{max-height:90vh;max-width:100%;object-fit:contain}
+.lb button{position:absolute;top:.6rem;right:1rem;background:none;border:0;color:var(--cream);font-size:2.6rem;cursor:pointer;width:48px;height:48px}
+
+@media(max-width:820px){
+ .burger{display:block}
+ .menu{position:fixed;top:0;right:0;bottom:0;width:min(78vw,300px);background:var(--cream);flex-direction:column;gap:1.4rem;padding:5rem 2rem;transform:translateX(105%);transition:transform .45s var(--ease);box-shadow:-10px 0 30px rgba(73,51,41,.18)}
+ .menu.open{transform:none}
+ .menu a{font-size:.85rem}
+ .program li{grid-template-columns:1fr;gap:.2rem}
+ .gallery{gap:.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition-duration:.01ms!important;animation:none!important;scroll-behavior:auto!important}
+ .rv{opacity:1;transform:none}
+}
+
+
+/* ===== ANIMATIONS ===== */
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes beat{50%{transform:scale(1.07)}}
+@keyframes rise{from{opacity:0;transform:translateY(28px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+@keyframes zoom{from{scale:1.14}to{scale:1}}
+@keyframes pop{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+@keyframes tick{from{transform:translateY(-35%);opacity:.2}to{transform:none;opacity:1}}
+.envelope{animation:float 4.5s ease-in-out infinite}
+.seal{animation:beat 2.6s ease-in-out infinite}
+.intro.open .envelope,.intro.open .seal{animation:none}
+.intro.open.fin .envelope{transform:scale(1.5) translateY(-8%);opacity:0;transition:transform .9s var(--ease),opacity .7s .1s}
+.intro.open .card{box-shadow:0 14px 30px rgba(73,51,41,.25)}
+.ready .hero-img{animation:zoom 2.4s var(--ease) both}
+body:not(.ready) .hi{opacity:0}
+.ready .hi{animation:rise 1.2s var(--ease) both;animation-delay:calc(var(--i) * .16s + .35s)}
+.names span{display:block}
+.count b.t{animation:tick .45s var(--ease)}
+h2.rv::after{content:"";display:block;width:0;height:1px;background:var(--terra);margin:1rem auto 0;transition:width 1.2s .5s var(--ease)}
+h2.rv.in::after{width:64px}
+.timeline.draw::before{transform:scaleY(0);transform-origin:top;transition:transform 2s var(--ease)}
+.timeline.draw.in::before{transform:scaleY(1)}
+.timeline li::before{transition:background .6s .3s,transform .6s .3s var(--ease);transform:scale(.3)}
+.timeline li.in::before{background:var(--terra);transform:none}
+.program li{transition:background .5s}
+.program li:hover{background:rgba(182,106,80,.06)}
+.program svg{transition:transform .5s var(--ease)}
+.program li:hover svg{transform:rotate(-12deg) scale(1.2)}
+.g.rv{opacity:1;transform:none}
+.g img{transition:scale 2s var(--ease),transform 1.2s var(--ease),clip-path 1.4s var(--ease)}
+.g.rv img{scale:1.28;clip-path:inset(100% 0 0 0)}
+.g.in img{scale:1;clip-path:inset(0)}
+.swatches:not(.in) li{opacity:0}
+.swatches.in li{animation:pop .8s var(--ease) both}
+.swatches.in li:nth-child(2){animation-delay:.15s}.swatches.in li:nth-child(3){animation-delay:.3s}
+.swatches i{transition:transform .4s var(--ease)}.swatches li:hover i{transform:scale(1.12)}
+.map{transition:box-shadow .6s}.map:hover{box-shadow:0 18px 40px rgba(73,51,41,.15)}
+.btn,.open-btn{position:relative;overflow:hidden}
+.btn::after,.open-btn::after{content:"";position:absolute;top:0;left:-70%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .9s var(--ease)}
+.btn:hover::after,.open-btn:hover::after{left:130%}
+.foot>img{scale:1.12;transition:scale 3s var(--ease)}
+.foot.in>img{scale:1}
+@media(prefers-reduced-motion:reduce){.swatches li,.hi{opacity:1!important}.g.rv img{scale:1;clip-path:none}.timeline.draw::before{transform:none}}
+</style>
+</head>
+<body class="locked">
+
+<!-- ENVELOPPE D'OUVERTURE -->
+<div id="intro" class="intro" role="dialog" aria-label="Invitation">
+  <button class="envelope" id="envelope" aria-label="Ouvrir notre invitation">
+    <span class="env-back"></span>
+    <span class="card">
+      <small>Vous êtes invités</small>
+      <b class="script">Sidney &amp; Axel</b>
+      <small data-cfg="dateText"></small>
+    </span>
+    <span class="env-front"></span>
+    <span class="flap"></span>
+    <span class="seal"><span class="script" data-cfg="initials"></span></span>
+  </button>
+  <p class="intro-text">Une invitation spéciale pour vous</p>
+  <button class="open-btn" id="open">Ouvrir notre invitation</button>
+  <button class="skip" id="skip">Passer</button>
+</div>
+
+<header class="nav" id="nav">
+  <a href="#accueil" class="nav-logo script">S&amp;A</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav id="menu" class="menu" aria-label="Navigation principale">
+    <a href="#accueil">Accueil</a><a href="#histoire">Notre histoire</a><a href="#galerie">Galerie</a>
+    <a href="#programme">Programme</a><a href="#lieu">Lieu</a><a href="#dresscode">Dress code</a><a href="#rsvp">RSVP</a>
+  </nav>
+</header>
+
+<main>
+  <!-- 1. ACCUEIL -->
+  <section id="accueil" class="hero">
+    <img class="hero-img" src="images/image1.jpeg" alt="Sidney et Axel" fetchpriority="high">
+    <div class="hero-in">
+      <p class="eyebrow hi" style="--i:0">Nous nous marions</p>
+      <h1 class="names script hi" style="--i:1"><span>Sidney</span><i>&amp;</i><span>Axel</span></h1>
+      <p class="tagline hi" style="--i:2" data-cfg="tagline"></p>
+      <p class="date hi" style="--i:3" data-cfg="dateText"></p>
+      <div class="count hi" style="--i:4" id="count" aria-live="off">
+        <div><b id="cd-d">0</b><span>Jours</span></div><div><b id="cd-h">0</b><span>Heures</span></div>
+        <div><b id="cd-m">0</b><span>Minutes</span></div><div><b id="cd-s">0</b><span>Secondes</span></div>
+      </div>
+      <p class="done" id="cd-done" hidden>Le grand jour est arrivé !</p>
+    </div>
+  </section>
+
+  <!-- 2. HISTOIRE -->
+  <section id="histoire" class="sec">
+    <h2 class="rv">Notre histoire</h2>
+    <p class="sub rv">Chaque rencontre écrit le début d'une nouvelle histoire.</p>
+    <ol class="timeline" id="story"></ol>
+  </section>
+
+  <!-- 3. GALERIE -->
+  <section id="galerie" class="sec alt">
+    <h2 class="rv">Quelques instants de nous</h2>
+    <div class="gallery">
+      <figure class="g g1 rv"><img src="images/image2.jpeg" alt="Sidney et Axel, portrait" loading="lazy"></figure>
+      <figure class="g g2 rv"><img src="images/image3.jpeg" alt="Sidney et Axel, moment complice" loading="lazy"></figure>
+      <figure class="g g3 rv"><img src="images/image4.jpeg" alt="Sidney et Axel, sourires" loading="lazy"></figure>
+      <figure class="g g4 rv"><img src="images/image5.jpeg" alt="Sidney et Axel, tendresse" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <!-- 4. PROGRAMME -->
+  <section id="programme" class="sec">
+    <h2 class="rv">Le déroulement de notre journée</h2>
+    <ol class="program" id="program"></ol>
+  </section>
+
+  <!-- 5. LIEU -->
+  <section id="lieu" class="sec alt">
+    <h2 class="rv">Rendez-vous à la Galerie Sainte-Cécile</h2>
+    <p class="sub rv" data-cfg="venueText"></p>
+    <div class="map rv"><iframe id="map" title="Carte du lieu" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <p class="addr" data-cfg="address"></p>
+    <a class="btn" id="route" target="_blank" rel="noopener">Ouvrir l'itinéraire</a>
+  </section>
+
+  <!-- 6. DRESS CODE -->
+  <section id="dresscode" class="sec">
+    <h2 class="rv">Dress Code</h2>
+    <p class="theme script rv">Chic &amp; élégance</p>
+    <p class="sub rv" data-cfg="dressText"></p>
+    <ul class="swatches rv">
+      <li><i style="background:#F5EFE6"></i>Crème</li>
+      <li><i style="background:#B66A50"></i>Terracotta</li>
+      <li><i style="background:#493329"></i>Marron profond</li>
+    </ul>
+  </section>
+
+  <!-- 7. RSVP -->
+  <section id="rsvp" class="sec alt">
+    <h2 class="rv">Votre présence nous ferait plaisir</h2>
+    <p class="sub rv">Un simple message suffit. Il s'ouvrira dans WhatsApp, et vous pourrez le modifier avant l'envoi.</p>
+    <a class="btn" id="wa" target="_blank" rel="noopener">Confirmer ma présence sur WhatsApp</a>
+  </section>
+</main>
+
+<!-- 8. PIED DE PAGE -->
+<footer class="foot rv">
+  <img src="images/image6.jpeg" alt="" loading="lazy">
+  <div class="foot-in">
+    <p class="thanks">Merci de faire partie de notre histoire.</p>
+    <p class="script big">Sidney &amp; Axel</p>
+    <p class="date" data-cfg="dateText"></p>
+    <p class="mono script" data-cfg="initials"></p>
+    <p class="tags" id="tags"></p>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden><button aria-label="Fermer">&times;</button><img alt=""></div>
+<script>
+/* ============================================================
+   CONFIGURATION CENTRALE — modifiez uniquement cette partie
+   ============================================================ */
+const CONFIG = {
+  initials: "S&A",
+  dateText: "25 novembre 2026",
+  // Cible du compte à rebours (Africa/Abidjan = UTC+00:00).
+  // Heure provisoire : minuit. Changez "time" quand l'heure est connue.
+  countdown: { date: "2026-11-25", time: "00:00", utcOffset: "+00:00" },
+  tagline: "Deux histoires, un seul chemin, une promesse pour la vie.",
+
+  venue: {
+    name: "Galerie Sainte-Cécile",
+    text: "Nous serons heureux de vous accueillir à la Galerie Sainte-Cécile, à Abidjan.",
+    address: "Abidjan, Côte d'Ivoire — [ADRESSE EXACTE À CONFIRMER]",
+    // Recherche par nom (aucune coordonnée inventée). Remplacez par l'adresse définitive.
+    mapQuery: "Galerie Sainte-Cécile, Abidjan, Côte d'Ivoire"
+  },
+
+  dressText: "Pour partager avec nous cette journée exceptionnelle, nous vous invitons à privilégier une tenue chic et élégante, dans l'esprit raffiné de notre célébration. Les couleurs ci-dessous sont une simple inspiration.",
+
+  whatsapp: {
+    number: "2250701870987",
+    message: "Bonjour Sidney et Axel, je vous confirme avec plaisir ma présence à votre mariage du 17 novembre 2026."
+  },
+
+  // Textes temporaires : remplacez-les par vos vrais moments.
+  story: [
+    { title: "Notre rencontre", date: "[DATE À PERSONNALISER]", text: "[À PERSONNALISER] Racontez ici le moment de votre rencontre." },
+    { title: "Notre premier rendez-vous", date: "[DATE À PERSONNALISER]", text: "[À PERSONNALISER] Racontez ici votre premier rendez-vous." },
+    { title: "Notre engagement", date: "[DATE À PERSONNALISER]", text: "[À PERSONNALISER] Racontez ici votre engagement." }
+  ],
+
+  program: [
+    { time: "[HORAIRE À CONFIRMER]", title: "Accueil des invités", text: "Installez-vous et retrouvez ceux que vous aimez.", icon: "M12 3l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5z" },
+    { time: "[HORAIRE À CONFIRMER]", title: "Cérémonie", text: "Le moment où nous échangeons nos promesses.", icon: "M8 12a4 4 0 118 0 4 4 0 01-8 0zM3 12a4 4 0 004 4M21 12a4 4 0 01-4 4" },
+    { time: "[HORAIRE À CONFIRMER]", title: "Séance photo", text: "Quelques portraits pour garder le souvenir de ce jour.", icon: "M4 8h4l2-3h4l2 3h4v11H4zM12 17a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" },
+    { time: "[HORAIRE À CONFIRMER]", title: "Réception et repas", text: "Un repas partagé, entre rires et musique.", icon: "M7 3v8M5 3v5a2 2 0 004 0V3M7 11v10M17 3c-2 2-2 7 0 9v9" },
+    { time: "[HORAIRE À CONFIRMER]", title: "Remerciements", text: "Un dernier mot pour vous dire merci.", icon: "M12 20s-7-4.4-7-10a4 4 0 017-2.6A4 4 0 0119 10c0 5.600-7 10-7 10z" }
+  ],
+
+  hashtags: ["#SidneyEtAxel", "#SidneyAxel2026", "#UnisPourLaVie", "#SAWedding2026"] // propositions
+};
+
+/* ============================================================
+   CODE — pas besoin de modifier en dessous
+   ============================================================ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc = t => String(t).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// Textes simples
+const map = { initials: CONFIG.initials, dateText: CONFIG.dateText, tagline: CONFIG.tagline,
+  venueText: CONFIG.venue.text, address: CONFIG.venue.address, dressText: CONFIG.dressText };
+$$("[data-cfg]").forEach(el => { el.textContent = map[el.dataset.cfg] ?? ""; });
+
+// Histoire & programme
+$("#story").innerHTML = CONFIG.story.map(s =>
+  `<li class="rv"><time>${esc(s.date)}</time><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></li>`).join("");
+$("#program").innerHTML = CONFIG.program.map(p =>
+  `<li class="rv"><time>${esc(p.time)}</time><div><h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${p.icon}"/></svg>${esc(p.title)}</h3><p>${esc(p.text)}</p></div></li>`).join("");
+$("#tags").innerHTML = CONFIG.hashtags.map(h => `<span>${esc(h)}</span>`).join("");
+
+// Carte, itinéraire, WhatsApp
+const q = encodeURIComponent(CONFIG.venue.mapQuery);
+$("#map").src = `https://www.google.com/maps?q=${q}&output=embed`;
+$("#route").href = `https://www.google.com/maps/search/?api=1&query=${q}`;
+$("#wa").href = `https://wa.me/${CONFIG.whatsapp.number}?text=${encodeURIComponent(CONFIG.whatsapp.message)}`;
+
+// Compte à rebours
+const c = CONFIG.countdown;
+const target = new Date(`${c.date}T${c.time}:00${c.utcOffset}`).getTime();
+function tick() {
+  const left = Math.max(0, target - Date.now());
+  const v = { d: Math.floor(left / 864e5), h: Math.floor(left / 36e5) % 24, m: Math.floor(left / 6e4) % 60, s: Math.floor(left / 1e3) % 60 };
+  $("#cd-d").textContent = v.d; $("#cd-h").textContent = String(v.h).padStart(2, "0");
+  $("#cd-m").textContent = String(v.m).padStart(2, "0"); $("#cd-s").textContent = String(v.s).padStart(2, "0");
+  const sEl = $("#cd-s"); if (sEl.dataset.v !== String(v.s)) { sEl.dataset.v = v.s; sEl.classList.remove("t"); void sEl.offsetWidth; sEl.classList.add("t"); }
+  if (left === 0) { $("#count").hidden = true; $("#cd-done").hidden = false; clearInterval(timer); }
+}
+const timer = setInterval(tick, 1000); tick();
+
+// Enveloppe
+const intro = $("#intro");
+function reveal() {
+  intro.classList.add("gone"); document.body.classList.remove("locked");
+  $("#nav").classList.add("show"); document.body.classList.add("ready"); watchReveal();
+  setTimeout(() => intro.remove(), 1000);
+}
+function openEnvelope() {
+  if (intro.classList.contains("open")) return;
+  intro.classList.add("open");
+  if (!reduce) setTimeout(() => intro.classList.add("fin"), 1800);
+  setTimeout(reveal, reduce ? 300 : 2500);
+}
+$("#envelope").addEventListener("click", openEnvelope);
+$("#open").addEventListener("click", openEnvelope);
+$("#skip").addEventListener("click", reveal);
+
+$$(".timeline").forEach(t => t.classList.add("draw"));
+$$(".foot-in > *").forEach((e, i) => { e.classList.add("rv"); e.style.transitionDelay = i * .12 + "s"; });
+// Apparition au défilement
+function watchReveal() {
+  const els = $$(".rv:not(.in),.draw:not(.in)");
+  if (reduce || !("IntersectionObserver" in window)) return els.forEach(e => e.classList.add("in"));
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .15 });
+  els.forEach(e => io.observe(e));
+}
+
+// Navigation : menu mobile + section active
+const burger = $("#burger"), menu = $("#menu");
+burger.addEventListener("click", () => { const o = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", o); });
+$$("a", menu).forEach(a => a.addEventListener("click", () => { menu.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
+if ("IntersectionObserver" in window) {
+  const so = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) $$("a", menu).forEach(a => a.classList.toggle("on", a.hash === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  $$("main section").forEach(s => so.observe(s));
+}
+
+// Parallaxe légère sur l'image d'accueil
+if (!reduce) {
+  const hero = $(".hero-img"); let raf = 0;
+  addEventListener("scroll", () => { if (raf) return; raf = requestAnimationFrame(() => {
+    const y = scrollY; if (y < innerHeight) hero.style.transform = `translateY(${y * .15}px)`; raf = 0; }); }, { passive: true });
+}
+
+// Visionneuse
+const lb = $("#lb"), lbImg = $("img", lb);
+$$(".g").forEach(g => { g.tabIndex = 0; g.setAttribute("role", "button"); g.setAttribute("aria-label", "Agrandir la photo");
+  const open = () => { const i = $("img", g); lbImg.src = i.src; lbImg.alt = i.alt; lb.hidden = false; };
+  g.addEventListener("click", open); g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+});
+lb.addEventListener("click", () => { lb.hidden = true; });
+addEventListener("keydown", e => { if (e.key === "Escape") lb.hidden = true; });
+
+</script>
+</body>
+</html>
